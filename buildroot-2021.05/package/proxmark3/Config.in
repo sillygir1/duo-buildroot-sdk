@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PROXMARK3
+	bool "proxmark3"
+	select BR2_PACKAGE_BZIP2
+	select BR2_PACKAGE_LUA
+	select BR2_PACKAGE_LZ4
+	select BR2_PACKAGE_GCC
+	help
+		Iceman proxmark3 client

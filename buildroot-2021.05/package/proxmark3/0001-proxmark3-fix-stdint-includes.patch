@@ -1,0 +1,65 @@
+diff -x .vscode -x .git -ruN proxmark3.orig/client/deps/jansson/hashtable.c proxmark3/client/deps/jansson/hashtable.c
+--- proxmark3.orig/client/deps/jansson/hashtable.c	2024-07-08 18:25:50.486240294 +0400
++++ proxmark3/client/deps/jansson/hashtable.c	2024-07-10 21:00:52.156526010 +0400
+@@ -12,9 +12,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#ifdef HAVE_STDINT_H
+ #include <stdint.h>
+-#endif
+ 
+ #include "jansson_config.h"   /* for JSON_INLINE */
+ #include "jansson_private.h"  /* for container_of() */
+diff -x .vscode -x .git -ruN proxmark3.orig/client/deps/jansson/hashtable_seed.c proxmark3/client/deps/jansson/hashtable_seed.c
+--- proxmark3.orig/client/deps/jansson/hashtable_seed.c	2024-07-08 18:25:50.486240294 +0400
++++ proxmark3/client/deps/jansson/hashtable_seed.c	2024-07-10 21:00:47.786514181 +0400
+@@ -9,9 +9,7 @@
+ #include <stdio.h>
+ #include <time.h>
+ 
+-#ifdef HAVE_STDINT_H
+ #include <stdint.h>
+-#endif
+ 
+ #ifdef HAVE_FCNTL_H
+ #include <fcntl.h>
+diff -x .vscode -x .git -ruN proxmark3.orig/client/deps/jansson/lookup3.h proxmark3/client/deps/jansson/lookup3.h
+--- proxmark3.orig/client/deps/jansson/lookup3.h	2024-07-08 18:25:50.486240294 +0400
++++ proxmark3/client/deps/jansson/lookup3.h	2024-07-10 21:01:13.259914970 +0400
+@@ -43,9 +43,7 @@
+ #include <jansson_private_config.h>
+ #endif
+ 
+-#ifdef HAVE_STDINT_H
+ #include <stdint.h>     /* defines uint32_t etc */
+-#endif
+ 
+ #ifdef HAVE_SYS_PARAM_H
+ #include <sys/param.h>  /* attempt to define endianness */
+diff -x .vscode -x .git -ruN proxmark3.orig/client/deps/jansson/utf.h proxmark3/client/deps/jansson/utf.h
+--- proxmark3.orig/client/deps/jansson/utf.h	2024-07-08 18:25:50.486240294 +0400
++++ proxmark3/client/deps/jansson/utf.h	2024-07-10 21:01:07.026565461 +0400
+@@ -12,9 +12,7 @@
+ #include <jansson_private_config.h>
+ #endif
+ 
+-#ifdef HAVE_STDINT_H
+ #include <stdint.h>
+-#endif
+ 
+ int utf8_encode(int32_t codepoint, char *buffer, size_t *size);
+ 
+diff -x .vscode -x .git -ruN proxmark3.orig/client/deps/jansson/value.c proxmark3/client/deps/jansson/value.c
+--- proxmark3.orig/client/deps/jansson/value.c	2024-07-08 18:25:50.486240294 +0400
++++ proxmark3/client/deps/jansson/value.c	2024-07-10 21:01:18.573261924 +0400
+@@ -18,9 +18,7 @@
+ #include <string.h>
+ #include <math.h>
+ 
+-#ifdef HAVE_STDINT_H
+ #include <stdint.h>
+-#endif
+ 
+ #include "jansson.h"
+ #include "hashtable.h"
