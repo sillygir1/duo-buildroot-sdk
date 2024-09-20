@@ -43,9 +43,24 @@
 
 &spi3 {
 	status = "okay";
+	/delete-node/ spidev@0;
 
-	spidev@0 {
+	st7789v: st7789v@0{
+		compatible = "sitronix,st7789v";
+		reg = <0>;
 		status = "okay";
+		spi-max-frequency = <48000000>;
+		spi-cpol;
+		spi-cpha;
+		rotate = <0>;
+		fps = <60>;
+		rgb;
+		buswidth = <8>;
+
+		dc = <&porta 18 GPIO_ACTIVE_HIGH>;
+		reset = <&porta 28 GPIO_ACTIVE_HIGH>;
+
+		debug = <0x0>;
 	};
 };
 
