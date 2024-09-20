@@ -1,3 +1,37 @@
+# Pilk-V - Milk-V Duo based Proxmark3 standalone addon.
+
+## Building using Docker
+
+### Clone the repository
+
+```bash
+git clone https://github.com/sillygir1/duo-buildroot-sdk.git --depth=1
+```
+
+### Enter the SDK code directory
+
+```bash
+cd pilk-v
+```
+
+### Pull the Docker image and run
+
+```bash
+docker run -itd --name duodocker -v $(pwd):/home/work milkvtech/milkv-duo:latest /bin/bash
+```
+
+### Build the image
+
+```bash
+./docker.sh build
+```
+
+## Credits
+
+This repository is based on [Milk-V Duo buildroot SDK](https://github.com/milkv-duo/duo-buildroot-sdk). Original README is preserved below.
+
+---
+
 English | [简体中文](./README-zh.md) | [日本語](./README-ja.md)
 
 # Project Introduction
