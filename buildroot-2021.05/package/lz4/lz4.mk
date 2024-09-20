@@ -20,6 +20,10 @@ LZ4_IGNORE_CVES += CVE-2014-4715
 # 0001-Fix-potential-memory-corruption-with-negative-memmov.patch
 LZ4_IGNORE_CVES += CVE-2021-3520
 
+# A tiny hack, hehe
+BR2_STATIC_LIBS = n
+BR2_SHARED_LIBS = n
+
 ifeq ($(BR2_STATIC_LIBS),y)
 LZ4_MAKE_OPTS += BUILD_SHARED=no
 else ifeq ($(BR2_SHARED_LIBS),y)
