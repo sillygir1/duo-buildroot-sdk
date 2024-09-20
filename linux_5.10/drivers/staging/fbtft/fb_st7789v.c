@@ -59,6 +59,8 @@ enum st7789v_command {
 	PWCTRL1 = 0xD0,
 	PVGAMCTRL = 0xE0,
 	NVGAMCTRL = 0xE1,
+	INVOFF = 0x20,
+	INVON = 0x21,
 };
 
 #define MADCTL_BGR BIT(3) /* bitmask for RGB/BGR order */
@@ -102,6 +104,8 @@ static int init_display(struct fbtft_par *par)
 	mdelay(50);
 	write_reg(par,0x29);
 	mdelay(200);
+	write_reg(par, INVOFF);
+	mdelay(50);
 	return 0;
 }
 
