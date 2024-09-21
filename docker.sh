@@ -6,12 +6,14 @@ elif [ "$1" == 'build' ]
 then
     time docker exec -it duodocker /bin/bash -c "cd /home/work/ && rm -rf buildroot-2021.05/output/milkv-duo256m_musl_riscv64/build/proxmark3* && rm -rf buildroot-2021.05/output/milkv-duo256m_musl_riscv64/build/encoder* && ./build.sh milkv-duo256m-sd"
     notify-send -a "Docker" -u critical -w "Run finished"
-elif [ "$1" == 'clean-dev' ]
+elif [ "$1" == "pkg" ]
 then
-    docker exec -it duodocker /bin/bash -c "cd /home/work/ && rm -rf buildroot-2021.05/output/milkv-duo256m_musl_riscv64/build/proxmark3*"
-elif [ "$1" == 'clean-pkg' ]
-then
-    docker exec -it duodocker /bin/bash -c "cd /home/work/ && rm -rf buildroot-2021.05/output/milkv-duo256m_musl_riscv64/build/"
+    if [ "$2" == '' ]
+    then
+        echo "Usage: ./docker.sh pkg package_name"
+        exit 1
+    fi
+    docker exec -it duodocker /bin/bash -c "./home/work/pkg-rebuild.sh $2"
 else
-    echo "Avaliable options: build, clean-dev, clean-pkg, set-defconfig"
+    echo "Avaliable options: build, pkg, set-defconfig"
 fi
