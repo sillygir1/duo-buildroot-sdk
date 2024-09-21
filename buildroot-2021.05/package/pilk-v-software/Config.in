@@ -1,0 +1,4 @@
+config BR2_PACKAGE_PILK-V-SOFTWARE
+	bool "pilk-v-software"
+	help
+		Pilk-v stuff
