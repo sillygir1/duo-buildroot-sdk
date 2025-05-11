@@ -11,7 +11,7 @@ git clone https://github.com/sillygir1/duo-buildroot-sdk.git --depth=1
 ### Enter the SDK code directory
 
 ```bash
-cd pilk-v
+cd duo-buildroot-sdk
 ```
 
 ### Pull the Docker image and run
